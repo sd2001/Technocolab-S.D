@@ -5,8 +5,6 @@ import pyowm
 import pytz
 from PyQt5 import QtWidgets,QtGui,QtCore
 import sys
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
-from matplotlib.figure import Figure
 import numpy as np
 from five_day_forecast import find_min_max
 from PyQt5.QtWidgets import *
