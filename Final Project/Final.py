@@ -16,7 +16,7 @@ from PyQt5.QtGui import QPixmap
     
 class Ui_MainWindow(object):
     def UI(self,days,min_t,max_t):
-        canvas = Canvas(parent=None,width=7, height=5,dpi=100,days=self.days,min_t=self.min_t,max_t=self.max_t)
+        canvas=Canvas(parent=None,width=7, height=5,dpi=100,days=self.days,min_t=self.min_t,max_t=self.max_t)
         #canvas.move(80,210)
     def pressed(self):
         self.place=self.lineEdit.text() 
@@ -144,12 +144,25 @@ class Canvas(FigureCanvas):
  
     def plot_bars(self,days,min_t,max_t):        
         days=dates.date2num(days)
-        bar_min=plt.bar(days-0.2, min_t, width=0.4, color='r')
-        bar_max=plt.bar(days+0.2, max_t, width=0.4, color='b')        
+        min_temp_bar=plt.bar(days-0.2, min_t, width=0.4, color='r')
+        max_temp_bar=plt.bar(days+0.2, max_t, width=0.4, color='b')        
         plt.xticks(days)
         x_y_axis=plt.gca()
-        xaxis_format = dates.DateFormatter('%m/%d')
+        xaxis_format=dates.DateFormatter('%m/%d')
         x_y_axis.xaxis.set_major_formatter(xaxis_format)
+        
+        for bar_chart in [min_temp_bar,max_temp_bar]:
+            for index,bar in enumerate(bar_chart):
+                height = bar.get_height()
+                xpos = bar.get_x() + bar.get_width()/2.0
+                ypos = height 
+                label_text = str(int(height))
+                plt.text(xpos, ypos, label_text,
+                        horizontalalignment='center',
+                        verticalalignment='bottom',
+                        color='black')
+        
+        
         plt.savefig('figure.png')
         
         #self.photo.setPixmap(QtGui.QPixmap("figure.png"))
@@ -160,7 +173,7 @@ if __name__ =="__main__":
     import sys
     app=QtWidgets.QApplication(sys.argv)
     MainWindow=QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui=Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
