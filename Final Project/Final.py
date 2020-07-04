@@ -15,8 +15,8 @@ from PyQt5.QtGui import QPixmap
 
     
 class Ui_MainWindow(object):
-    def UI(self,days,min_t,max_t):
-        canvas=Canvas(parent=None,width=7, height=5,dpi=100,days=self.days,min_t=self.min_t,max_t=self.max_t)
+    #def UI(self,days,min_t,max_t):
+        #canvas=Canvas(parent=None,width=7, height=5,dpi=100,days=self.days,min_t=self.min_t,max_t=self.max_t)
         #canvas.move(80,210)
     def pressed(self):
         self.place=self.lineEdit.text() 
@@ -26,11 +26,11 @@ class Ui_MainWindow(object):
             print("Select any 1")            
         elif self.checkBox.isChecked()==True and self.checkBox_2.isChecked()==False:
             self.unit_t=self.checkBox.text()
-            self.days,self.min_t,self.max_t=find_min_max(self.place,self.unit_t)
+            find_min_max(self.place,self.unit_t)
         elif self.checkBox_2.isChecked()==True and self.checkBox.isChecked()==False:
             self.unit_t=self.checkBox_2.text()
-            self.days,self.min_t,self.max_t=find_min_max(self.place,self.unit_t)           
-        self.UI(self.days,self.min_t,self.max_t)
+            find_min_max(self.place,self.unit_t)           
+        #self.UI(self.days,self.min_t,self.max_t)
                 
            
     def setupUi(self, MainWindow):
@@ -133,40 +133,7 @@ class Ui_MainWindow(object):
         self.label_3.setPixmap(QtGui.QPixmap("figure.png"))
         print("Done")  
 
-class Canvas(FigureCanvas):
-    def __init__(self, parent = None, width = 7, height = 5, dpi = 100, days=1,min_t=None,max_t=None):
-        fig = Figure(figsize=(width, height), dpi=dpi)        
-        
-        FigureCanvas.__init__(self, fig)
-        self.setParent(parent)        
-        self.plot_bars(days,min_t,max_t)
- 
- 
-    def plot_bars(self,days,min_t,max_t):        
-        days=dates.date2num(days)
-        min_temp_bar=plt.bar(days-0.2, min_t, width=0.4, color='r')
-        max_temp_bar=plt.bar(days+0.2, max_t, width=0.4, color='b')        
-        plt.xticks(days)
-        x_y_axis=plt.gca()
-        xaxis_format=dates.DateFormatter('%m/%d')
-        x_y_axis.xaxis.set_major_formatter(xaxis_format)
-        
-        for bar_chart in [min_temp_bar,max_temp_bar]:
-            for index,bar in enumerate(bar_chart):
-                height = bar.get_height()
-                xpos = bar.get_x() + bar.get_width()/2.0
-                ypos = height 
-                label_text = str(int(height))
-                plt.text(xpos, ypos, label_text,
-                        horizontalalignment='center',
-                        verticalalignment='bottom',
-                        color='black')
-        
-        
-        plt.savefig('figure.png')
-        
-        #self.photo.setPixmap(QtGui.QPixmap("figure.png"))
-        
+       
         
 
 if __name__ =="__main__":
