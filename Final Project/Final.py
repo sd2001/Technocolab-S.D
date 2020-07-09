@@ -7,7 +7,6 @@ from PyQt5 import QtWidgets,QtGui,QtCore
 import sys
 import numpy as np
 from min_max_temp import find_min_max
-from line_forecast
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QPixmap
 
