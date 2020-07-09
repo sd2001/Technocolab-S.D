@@ -93,5 +93,5 @@ def plot_line(days,min_t,max_t):
                         horizontalalignment='center',
                         verticalalignment='bottom',
                         color='black')
-        plt.show()
+        #plt.show()
         plt.savefig('E:\Technocolab\Final Project\figure_line.png')
