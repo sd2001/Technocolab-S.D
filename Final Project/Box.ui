@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1061</width>
-    <height>801</height>
+    <width>1108</width>
+    <height>872</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -20,8 +20,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>840</x>
-      <y>120</y>
+      <x>900</x>
+      <y>130</y>
       <width>131</width>
       <height>41</height>
      </rect>
@@ -124,7 +124,7 @@
    <widget class="QCheckBox" name="checkBox_2">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>530</x>
       <y>140</y>
       <width>111</width>
       <height>20</height>
@@ -139,8 +139,8 @@
      <rect>
       <x>80</x>
       <y>250</y>
-      <width>891</width>
-      <height>471</height>
+      <width>951</width>
+      <height>541</height>
      </rect>
     </property>
     <property name="text">
@@ -150,7 +150,7 @@
      <enum>Qt::PlainText</enum>
     </property>
     <property name="pixmap">
-     <pixmap>white.png</pixmap>
+     <pixmap>../../Final Project/white.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -159,7 +159,7 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>390</x>
       <y>190</y>
       <width>131</width>
       <height>41</height>
@@ -174,7 +174,28 @@
      </font>
     </property>
     <property name="text">
-     <string>GRAPH</string>
+     <string>BAR GRAPH</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>190</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>System</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>LINE GRAPH</string>
     </property>
    </widget>
   </widget>
@@ -183,7 +204,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1061</width>
+     <width>1108</width>
      <height>26</height>
     </rect>
    </property>
