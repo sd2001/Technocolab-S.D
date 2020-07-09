@@ -13,9 +13,6 @@ from PyQt5.QtGui import QPixmap
 
     
 class Ui_MainWindow(object):
-    #def UI(self,days,min_t,max_t):
-        #canvas=Canvas(parent=None,width=7, height=5,dpi=100,days=self.days,min_t=self.min_t,max_t=self.max_t)
-        #canvas.move(80,210)
     def pressed(self):
         self.place=self.lineEdit.text() 
         self.unit_t=None
@@ -28,7 +25,7 @@ class Ui_MainWindow(object):
         elif self.checkBox_2.isChecked()==True and self.checkBox.isChecked()==False:
             self.unit_t=self.checkBox_2.text()
             find_min_max(self.place,self.unit_t)           
-        #self.UI(self.days,self.min_t,self.max_t)
+        
                 
            
   
@@ -141,10 +138,10 @@ class Ui_MainWindow(object):
         
     def show_bar(self):
         self.label_3.setPixmap(QtGui.QPixmap("figure.png"))
-        print("Done")  
+        print("Bar Graph Done")  
     def show_line(self):
         self.label_3.setPixmap(QtGui.QPixmap("figure_line.png"))
-        print("Done")       
+        print("Line Graph Done")       
         
 
 if __name__ =="__main__":

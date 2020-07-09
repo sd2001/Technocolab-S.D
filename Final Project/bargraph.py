@@ -14,6 +14,9 @@ def plot_bars(days,min_t,max_t):
         xaxis_format=dates.DateFormatter('%m/%d')
         
         x_y_axis.xaxis.set_major_formatter(xaxis_format)
+        plt.xlabel('Dates(mm/dd)') 
+        plt.ylabel('Temperature') 
+        plt.title('5-Day Weather Forecast')
         
         for bar_chart in [min_temp_bar,max_temp_bar]:
             for index,bar in enumerate(bar_chart):
@@ -28,6 +31,5 @@ def plot_bars(days,min_t,max_t):
         
         
         plt.savefig('figure.png')
+        plt.clf()
     
-    
-find_min_max('Kolkata','Celcius')
