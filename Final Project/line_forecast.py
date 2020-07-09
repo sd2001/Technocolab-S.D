@@ -3,6 +3,7 @@ from matplotlib import dates
 from datetime import datetime
 import pyowm
 from matplotlib import rcParams
+import cv2
 
 owm=pyowm.OWM('0833f103dc7c2924da06db624f74565c')
 mgr=owm.weather_manager()
@@ -42,17 +43,32 @@ def find_min_max(place,unit):
 
 def plot_bars(days,min_t,max_t):        
         days=dates.date2num(days)
-        #rcParams['figure.figsize']=10,7
-        plt.plot(days,max_t,color='green', linestyle='dashdot', linewidth = 1,marker='o', markerfacecolor='red', markersize=7) 
-        plt.plot(days,min_t,color='orange', linestyle='dashdot', linewidth = 1,marker='o', markerfacecolor='blue', markersize=7)     
-        #plt.ylim(min(min_t)-10,max(max_t)+10)
+        rcParams['figure.figsize']=7,4
+        plt.plot(days,max_t,color='green',linestyle='dashdot',linewidth = 1,marker='o',markerfacecolor='red',markersize=7) 
+        plt.plot(days,min_t,color='orange',linestyle='dashdot',linewidth = 1,marker='o',markerfacecolor='blue',markersize=7)     
+        plt.ylim(min(min_t)-4,max(max_t)+4)
         plt.xticks(days)
         x_y_axis=plt.gca()
         xaxis_format=dates.DateFormatter('%m/%d')
         
+        
         x_y_axis.xaxis.set_major_formatter(xaxis_format)
         plt.grid(True,color='brown')
-        plt.legend(["Max","Min"],loc=2)    
+        plt.legend(["Maximum Temperaure","Minimum Temperature"],loc=1) 
+        plt.xlabel('Dates') 
+        plt.ylabel('Temperature') 
+        plt.title('5-Day Weather Forecast')   
+        
+        for i in range(5):
+            plt.text(days[i], min_t[i]-1.5,min_t[i],
+                        horizontalalignment='center',
+                        verticalalignment='bottom',
+                        color='black')
+        for i in range(5):
+            plt.text(days[i], max_t[i]+0.5,max_t[i],
+                        horizontalalignment='center',
+                        verticalalignment='bottom',
+                        color='black')
         plt.show()
         plt.savefig('figure_line.png')
     
