@@ -120,7 +120,8 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         
         self.pushButton.clicked.connect(self.pressed) 
-        self.pushButton_2.clicked.connect(self.show_photo)
+        self.pushButton_2.clicked.connect(self.show_bar)
+        self.pushButton_3.clicked.connect(self.show_line)
         #self.label_3.setPixmap(QtGui.QPixmap("figure.png"))
         #print("Done")          
         
@@ -138,9 +139,12 @@ class Ui_MainWindow(object):
         self.pushButton_3.setText(_translate("MainWindow", "LINE GRAPH"))
         self.menuUser.setTitle(_translate("MainWindow", "User"))
         
-    def show_photo(self):
+    def show_bar(self):
         self.label_3.setPixmap(QtGui.QPixmap("figure.png"))
         print("Done")  
+    def show_line(self):
+        self.label_3.setPixmap(QtGui.QPixmap("figure_line.png"))
+        print("Done")
 
        
         
