@@ -6,7 +6,8 @@ import pytz
 from PyQt5 import QtWidgets,QtGui,QtCore
 import sys
 import numpy as np
-from five_day_forecast import find_min_max
+from min_max_temp import find_min_max
+from line_forecast
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QPixmap
 
@@ -144,9 +145,7 @@ class Ui_MainWindow(object):
         print("Done")  
     def show_line(self):
         self.label_3.setPixmap(QtGui.QPixmap("figure_line.png"))
-        print("Done")
-
-       
+        print("Done")       
         
 
 if __name__ =="__main__":
