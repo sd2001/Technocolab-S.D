@@ -55,7 +55,7 @@ def plot_bars(days,min_t,max_t):
         x_y_axis.xaxis.set_major_formatter(xaxis_format)
         plt.grid(True,color='brown')
         plt.legend(["Maximum Temperaure","Minimum Temperature"],loc=1) 
-        plt.xlabel('Dates') 
+        plt.xlabel('Dates(mm/dd)') 
         plt.ylabel('Temperature') 
         plt.title('5-Day Weather Forecast')   
         
