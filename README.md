@@ -1,5 +1,6 @@
 # Technocolab-S.D
-**As a part of this Internship, I had to make a GUI that forecasts the weather details of a place for the next 5 Days.Using a Weather API deployed using Python I made this**
+**As a part of this Internship, I had to make a GUI that forecasts the weather details of a place for the next 5 Days.Using a Weather API deployed using Python I made this.**
+
 *Modules Required* : **PyQT5,Matplotlib,PyOWM,Datetime**
 
 *The GUI looks similar to this:*
